@@ -1,0 +1,44 @@
+<script type="text/javascript">
+   
+  // inicializar select
+   	$(document).ready(function(){
+    $('select').formSelect();
+	});
+
+	// inicializar fecha
+	$(document).ready(function(){
+    $('.datepicker').datepicker({
+    	setDefaultDate: true,
+    	defaultDate: new Date(),
+    });
+  	});
+
+  //inicializar hora
+  	  $(document).ready(function(){
+    $('.timepicker').timepicker();
+  });
+             
+  //inicializar la nav bar
+      $(document).ready(function(){
+    $('.sidenav').sidenav();
+  });
+
+
+  // iniciar el autocompletado
+
+    $(document).ready(function(){
+    $('input.claseAutocompletado').autocomplete({
+      data: {
+        "Apple": null,
+        "Microsoft": null,
+        "Google": 'https://placehold.it/250x250'
+      },
+    });
+  });
+        
+
+</script>
+
+
+
+
