@@ -2,7 +2,7 @@ function doGet(e) {
   var template= HtmlService.createTemplateFromFile("A.-index.html");
 
   //Aqui va las listas//
-  template.nombres= traerMunicipios();
+  //template.nombres= traerMunicipios();
   template.municipios=elegirMunicipio();
   
   return template.evaluate().setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL); //para iframe 

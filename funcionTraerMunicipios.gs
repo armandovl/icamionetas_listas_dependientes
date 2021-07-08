@@ -10,27 +10,22 @@ function elegirMunicipio(){
 };
 
 
-//var argumento="CUETZALAN";
-function ejecutando(){
-  traerMunicipios("CUETZALAN");
-}
 
-function traerMunicipios(argumento){
- 
+function traerMunicipios(argumentoMunicipio){
   var ss= SpreadsheetApp.openById("1TBdXBPz-qV2F9eQp5Fc06c5ER4MKUIUwBhGyOstO-AI");
   var sheet=ss.getSheetByName("Municipios");
   var datos= sheet.getDataRange().getValues();
   var nombres=[];
 
-  if (argumento=="ACAYUCAN"){
+  if (argumentoMunicipio=="ACAYUCAN"){
     datos.forEach(row=>{
     nombres.push(row[0]);
     });
-  } else if(argumento=="CUETZALAN"){
+  } else if(argumentoMunicipio=="CUETZALAN"){
     datos.forEach(row=>{
     nombres.push(row[1]);
     });
-  } else if(argumento=="PACHUCA"){
+  } else if(argumentoMunicipio=="PACHUCA"){
     datos.forEach(row=>{
     nombres.push(row[2]);
     });
@@ -39,9 +34,7 @@ function traerMunicipios(argumento){
     nombres.push(row[3]);
     });
   }
-
-  sheet.appendRow([new Date(),argumento]);
-
+  //sheet.appendRow([new Date(),argumentoMunicipio]); // lo pone en la hoja
   return nombres;
  };
 

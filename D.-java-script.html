@@ -3,7 +3,22 @@
   function cambiarSelect(){
     var municipioSeleccionado=document.getElementById("municipiosId").value;
     alert(municipioSeleccionado);
-    google.script.run.traerMunicipios(municipioSeleccionado);
+    google.script.run
+    .withSuccessHandler(actualizarInformacion)
+    .traerMunicipios(municipioSeleccionado);
+  }
+
+  function actualizarInformacion(listaNombres){
+    alert(listaNombres);
+
+    var select=document.getElementById("nombresId");
+    select.options.length=0;
+    listaNombres.forEach(elemento=>{
+      var opciones= document.createElement('option');
+      opciones.value=elemento;
+      opciones.innerHTML=elemento;
+      select.appendChild(opciones);
+    })
   }
 
 
